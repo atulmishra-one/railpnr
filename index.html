@@ -1,0 +1,143 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Rail Pnr Status</title>
+<link rel="stylesheet" href="css/style.css"  />
+</head>
+
+<body>
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=179183745569090";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=179183745569090";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+	<div class="wrapper">
+    	<div class="header">
+        	<div class="logo">
+            	<span><img src="images/logo1.jpg" ></span>
+            </div>
+            <div class="bar">
+            	<span>
+                	<nav>
+                    	<ul>
+                        	<li><a href="#">Home</a></li>
+                            <li><a href="#">Pnr Status</a></li>
+                            <li><a href="#">Train Enquiry</a></li>
+                            <li><a href="#">Seat Availability</a></li>
+                        </ul>
+                    </nav>
+                </span>
+            </div>
+        </div>
+        <div class="content">
+        	<div class="left">
+            	<table class="pbox">
+                	<tr>
+                    	<td colspan="3" class="pheader" align="center"><h1>Check Pnr Status</h1></td>
+                    </tr>
+                    <tr>
+                    	<td colspan="3"></td>
+                    </tr>
+                    <tr>
+                    	<td colspan="3" align="center"><input type="text" maxlength="10" size="38" id="pnr" ></td>
+                    </tr>
+                    <tr>
+                    	<td colspan="3" align="center"><input type="button" value="Pnr Status" onClick="SubmitSubscription();" class="btn-large-green" ></td>
+                    </tr>
+                    <tr>
+                    	<td colspan="3"></td>
+                    </tr>
+                    <tr>
+                    	<td colspan="3"></td>
+                    </tr>
+                    <tr>
+                    	<td colspan="3"><a href="" class="small-link">Join or community, be the first of your friends</a></td>
+                    </tr>
+                    <tr>
+                    	<td colspan="3"></td>
+                    </tr>
+                </table>
+               <div class="gap"></div>
+             <div class="fb-like-box" data-href="https://www.facebook.com/RailPnrStatus" data-width="300" data-show-faces="true" data-header="true" data-stream="false" data-show-border="true"></div>
+             
+              <div class="gap"></div>
+              
+             <!-- Place this tag where you want the +1 button to render. -->
+<div class="g-plusone" data-annotation="inline" data-width="220"></div>
+
+ <div class="gap"></div>
+<!-- Place this tag after the last +1 button tag. -->
+<script type="text/javascript">
+  (function() {
+    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+    po.src = 'https://apis.google.com/js/plusone.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+  })();
+</script>
+             <a href="http://addm.cc/?E0MBUSH" target="_blank"><img src="http://addmefast.com/images/banners/300x250/amf_300x250.gif" alt="" title="" /></a>
+            </div>
+            <div class="right">
+             <div class="right-inner">
+             <a class="floatr" href="http://addm.cc/?E0MBUSH" target="_blank"><img src="http://addmefast.com/images/banners/160x600/fb_160x600.gif" alt="" title="" /></a>
+           	    
+                    <div class="bheader"> 
+             		     <h2>Pnr Status Check Made Easy - Indian Railway PNR Status </h2> <div class="fb-like" data-href="https://www.facebook.com/RailPnrStatus" data-width="450" data-show-faces="true" data-send="true"></div>
+                    
+             			    <br /><img src="images/bookmark.png"  height="36"/> <small class="text-small">Bookmark this Site</small>
+                    </div>
+                
+                
+                <div id="res"></div>
+                
+                <a href="http://addm.cc/?E0MBUSH" target="_blank"><img src="http://addmefast.com/images/banners/728x90/amf_728x90.gif" alt="" title="" /></a>
+                </div>
+            </div>
+            <div class="clear"></div>
+        </div>
+        <div class="footer">
+        	<p>Copyright &copy; RailPnrStatus.in , All rights reserved.</p>
+        </div>
+    </div>
+</body>
+<script src="js/jquery.js"></script>
+<script src="js/jquery.blockUI.js"></script>
+<script>
+	function SubmitSubscription()
+	{
+		var pnr = document.getElementById("pnr").value;
+		
+		$.blockUI({ css: { 
+            border: 'none', 
+            padding: '15px', 
+            backgroundColor: '#000', 
+            '-webkit-border-radius': '10px', 
+            '-moz-border-radius': '10px', 
+            opacity: .7, 
+            color: '#fff'
+        } });
+		
+		$.post('pnr.php', {pnrn: pnr}, function(data){
+			
+			 $.unblockUI({ 
+                	onUnblock: function(){} 
+            });
+			$('#res').html(data);
+		});
+		
+		return false;
+	}
+</script>
+</html>
